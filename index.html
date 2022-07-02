@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="grid">
+        <h1>snap</h1>
+        <nav class="navegacion">
+            <div class="navegacion-enlaces">
+                <div class="relative">
+                    <a id="modal-features" href="#">Features</a>
+                    <img id="modal-arrow" src="images/icon-arrow-down.svg" alt="">
+                    <div class="modal">
+                        <div class="modal-item">
+                            <img src="images/icon-todo.svg" alt="">
+                            <a href="">Todo List</a>
+                        </div>
+                        <div class="modal-item">
+                            <img src="images/icon-calendar.svg" alt="">
+                            <a href="">Calendar</a>
+                        </div>
+                        <div class="modal-item">
+                            <img src="images/icon-reminders.svg" alt="">
+                            <a href="">Reminders</a>
+                        </div>
+                        <div class="modal-item">
+                            <img src="images/icon-planning.svg" alt="">
+                            <a href="">Planning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <a id="modal-company" href="#">Company</a>
+                    <img id="modal-arrow" src="images/icon-arrow-down.svg" alt="">
+                    <div class="modal">
+                        <div class="modal-item">
+                            <a href="">History</a>
+                        </div>
+                        <div class="modal-item">
+                            <a href="">Our Team</a>
+                        </div>
+                        <div class="modal-item">
+                            <a href="">Blog</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="">Careers</a>
+                <a href="">About</a>
+            </div>
+
+            <div class="navegacion-login">
+                <a href="">Login</a>
+                <a href="">Register</a>
+            </div>
+        </nav>
+
+        <img id="btnAbrir" src="images/icon-menu.svg" alt="">
+        <div class="inicio-textos">
+            <h1>Make remote work</h1>
+            <div class="inicio-textos-bottom">
+                <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+                <a href="">Learn more</a>
+                <div class="inicio-textos-bottom-imagenes">
+                    <img src="images/client-databiz.svg" alt="">
+                    <img src="images/client-audiophile.svg" alt="">
+                    <img src="images/client-meet.svg" alt="">
+                    <img src="images/client-maker.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="inicio-imagen">
+            <img id="inicio-imagen" src="images/image-hero-desktop.png" alt="Frontend Mentor Inicio IMG">
+        </div>
+    </div>
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="noopener" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/Kodedbykenzie" target="_blank">Mozia Precious Chibundu</a>.
+    </div>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>

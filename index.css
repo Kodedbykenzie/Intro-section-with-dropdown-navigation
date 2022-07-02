@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,500;1,700&display=swap');
+:root {
+    --gris: hsl(0, 0%, 41%);
+    --blanco: hsl(0, 0%, 98%);
+    --negro: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Contenedor principal */
+
+.grid {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 70px 1fr 1fr;
+}
+
+.grid h1 {
+    line-height: 70px;
+    color: var(--negro);
+    margin-left: 10px;
+    padding: .1px;
+}
+
+
+/* Navegacion */
+
+.navegacion {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navegacion a {
+    color: var(--gris);
+}
+
+.navegacion .navegacion-enlaces {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navegacion .navegacion-login {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navegacion .navegacion-login a:last-child {
+    border: 2px solid var(--gris);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* Contenedores Inicio */
+
+.inicio-textos {
+    grid-column: 2 / 8;
+    grid-row: 2 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.inicio-textos h1 {
+    font-size: 5rem;
+    color: var(--negro);
+}
+
+.inicio-textos-bottom {
+    margin-left: 10px;
+    width: 90%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--gris);
+}
+
+.inicio-textos-bottom a {
+    color: var(--blanco);
+    background-color: var(--negro);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.inicio-textos .inicio-textos-bottom-imagenes {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inicio-textos .inicio-textos-bottom-imagenes img {
+    width: 20%;
+}
+
+.inicio-imagen {
+    grid-column: 8 / 13;
+    grid-row: 2 / -1;
+    height: calc(100vh - 70px);
+}
+
+
+/* Modal */
+
+.relative {
+    position: relative;
+}
+
+.relative img {
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+}
+
+.modal {
+    background-color: var(--blanco);
+    box-shadow: 0px 5px 15px var(--gris);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 20px;
+    width: 200px;
+    display: none;
+}
+
+.modal-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.modal-item {
+    height: 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* Responsive tablets */
+
+@media (max-width: 800px) {
+    .navegacion .navegacion-enlaces {
+        width: 70%;
+    }
+    .navegacion .navegacion-login {
+        width: 30%;
+    }
+    .inicio-textos {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        margin-top: 50px;
+    }
+    .inicio-imagen {
+        grid-column: 1 / -1;
+        grid-row: 3 / -1;
+    }
+}
+
+
+/* Responsive celulares */
+
+@media (max-width: 632px) {
+    .grid {
+        grid-template-rows: repeat(12, 1fr);
+    }
+    .inicio-textos {
+        grid-column: 1 / -1;
+        grid-row: 6 / -1;
+        height: 500px;
+        margin-top: 0;
+        text-align: center;
+        justify-content: flex-start;
+        z-index: 20;
+    }
+    .inicio-textos h1 {
+        font-size: 1.5rem;
+    }
+    .inicio-textos-bottom {
+        width: 100%;
+        align-items: center;
+        margin-left: 0;
+    }
+    .inicio-imagen img {
+        display: none;
+    }
+    .inicio-imagen {
+        grid-column: 1 / -1;
+        grid-row: 2 / 10;
+        height: 300px;
+        background-image: url("https://github.com/ConceptSec/intro-section-with-dropdown-navigation/blob/main/images/image-hero-mobile.png?raw=true");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        ;
+    }
+    .inicio-textos .inicio-textos-bottom-imagenes {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .inicio-textos .inicio-textos-bottom-imagenes img {
+        width: 200px;
+        object-fit: contain;
+    }
+    .navegacion {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 250px;
+        flex-direction: column;
+        background-color: var(--blanco);
+        transform: translate(100%);
+        transition: transform .5s;
+        z-index: 30;
+    }
+    .navegacion .navegacion-enlaces {
+        flex-direction: column;
+        width: 90%;
+        overflow: hidden;
+        align-self: center;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .navegacion .navegacion-enlaces a {
+        margin: 20px 0;
+    }
+    #btnAbrir {
+        display: block !important;
+        z-index: 30;
+    }
+    .navegacion .navegacion-login {
+        flex-direction: column;
+        height: 20%;
+        width: 100%;
+        text-align: center;
+    }
+    .navegacion .navegacion-login a {
+        width: 90%;
+    }
+    .modal {
+        background-color: inherit;
+        box-shadow: none;
+        position: relative;
+        margin-top: 0px;
+    }
+    .navegacion .navegacion-enlaces {
+        justify-content: flex-start;
+    }
+    .navegacion .relative:first-child {
+        margin: 100px 0 20px;
+    }
+}
+
+#btnAbrir {
+    display: none;
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    height: 30px;
+    width: 30px;
+}
+
+.bg {
+    position: fixed;
+    background-color: var(--negro);
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    display: none;
+}
+
+.dpblock {
+    display: block;
+}
